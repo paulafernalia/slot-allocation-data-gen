@@ -82,7 +82,7 @@ Fields in demand file `IXXXX_demand.csv`:
 | `Season` | 3-letter code in format XYY indicating aviation season under consideration, where "X" indicates whether it's a winter (W) or summer (S) season and "YY" is the year in 2-digit format. All instances generated are based on the 2020 summer season (S20) |
 | `ServType` | Type of service, "J" for scheduled in all generated instances |
 | `Term`| Name of terminal in which each series operates, e.g. Term1, Term2 |
-| `OrigDest`| 3-letter code of dummy origin or destination airport | 
+| `OrigDest`| 3-letter code of dummy origin or destination airport. "ZZD" denotes a domestic airport and "ZZI" an international airport | 
 | `StartDate`| First date in the season that the series requests to operate | 
 | `EndDate`| Last date in the season that the series requests to operate | 
 | `Seats`| Number of seats in every flight in the series | 
