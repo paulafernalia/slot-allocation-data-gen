@@ -75,25 +75,37 @@ Fields in demand file `IXXXX_demand.csv`:
 
 | Field | Description |
 | ----------- | ----------- |
-| `FREQ` | This field indicates days of the week that a series requests to operate. e.g. "01034007" indicates that the series requests to operate on Tuesdays (1), Thursdays (3), Fridays (4) and Sundays (7). |
+| `FREQ` | This field indicates days of the week that a series requests to operate. e.g. "01034007" indicates that the series requests to operate on Tuesdays (1), Thursdays (3), Fridays (4) and Sundays (7) |
 | `Carrier`| 3-letter code of dummy name of carrier operating the flight in the series |
 | `FlNum`| Flight number of flights in the series | 
 | `Airport` | 3-letter code of dummy airport associated with this instance |
 | `Season` | 3-letter code in format XYY indicating aviation season under consideration, where "X" indicates whether it's a winter (W) or summer (S) season and "YY" is the year in 2-digit format. All instances generated are based on the 2020 summer season (S20) |
 | `ServType` | Type of service, "J" for scheduled in all generated instances |
-| `Term`| Name of terminal in which each series operates, e.g. Term1, Term2. |
+| `Term`| Name of terminal in which each series operates, e.g. Term1, Term2 |
 | `OrigDest`| 3-letter code of dummy origin or destination airport | 
 | `StartDate`| First date in the season that the series requests to operate | 
 | `EndDate`| Last date in the season that the series requests to operate | 
 | `Seats`| Number of seats in every flight in the series | 
 | `Pax`| Number of passengers in every flight in the series | 
 | `ArrDep`| Arrival or departure | 
-| `Req`| Requested slot | 
+| `Req`| Requested slot, in HHMM format | 
 | `NoOps`| Number of requested operations in the season. It can be calculated from `StartDate`, `EndDate` and `FREQ` | 
 | `TurnCarrier`| Name of the carrier operating the turnaround flight, if this information is provided | 
 | `TurnFlNum`| Flight number of the turnaround flight, if this information is provided | 
 
 
+Fields in demand file `IXXXX_capacity.csv`:
+
+| Field | Description |
+| ----------- | ----------- |
+| `Constraint` | Unique identifier of a type of capacity constraint, which groups all individual limits with the same `Resource`, `ArrDep`, `Duration`, `DomInt` and `Terminal`|
+| `Resource`| Runway (limits the number of flights) or terminal (number of passengers) |
+| `ArrDep` | Whether this limit affects arriving flights (A), departures (D) or all flights (T) |
+| `Duration`| Duration of the time window of the capacity limit, in minutes |
+| `Limit` | Maximum number of flights or passengers allowed within the time window |
+| `Time` | Start time of the capacity limit window, in HHMM format |
+| `DomInt` | Whether this limit affects domestic flights (D), international flights (I) or all flights (T) |
+| `Terminal` | Capacity limit only affects flights operating in this terminal. If empty, flights in any terminal can be affected |
 
 ## Future work
 
