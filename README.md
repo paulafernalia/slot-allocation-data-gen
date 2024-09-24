@@ -5,6 +5,7 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Data Dictionary](#data-dictionary)
+* [Instance summary](#instance-summary)
 * [Future Work](#future-work)
 
 
