@@ -109,7 +109,9 @@ Fields in demand file `IXXXX_capacity.csv`:
 | `Terminal` | Capacity limit only affects flights operating in this terminal. If empty, flights in any terminal can be affected |
 
 ## Instance summary
-This code was used to generate 100 synthetic instances uploaded to [DataShare Edinburgh](https://datashare.ed.ac.uk/handle/10283/4374). Below you can find a table with summary statistics for each of the instances contained in that data repository:
+This code was used to generate 100 synthetic instances uploaded to [DataShare Edinburgh](https://datashare.ed.ac.uk/handle/10283/4374). Below you can find two tables with summary statistics for each of the instances contained in that data repository. 
+
+In the demand table, `Series` represents the number of series in each instance; `Movements` is the total number of requested operations throughout the season; `Total displacement (min)` is the total displacement in minutes across all operations. There is no column for rejections because none of these instances resulted in any rejections.
 
 | Instance | Series | Movements     | Total displacement (min) |
 |----------|--------|---------|--------------|
@@ -214,6 +216,7 @@ This code was used to generate 100 synthetic instances uploaded to [DataShare Ed
 | I0098    | 1,248  | 56,023  |   28,580           |
 | I0099    | 3,114  | 112,019 |  15,945            |
 
+In the capacity table below, `Constraint types` is the number of different families of capacity constraints declared by this ficitious airport, e.g. "max 10 departures in 60-minute periods rolling every 15 minutes". `Runway constraints` and `Terminal constraints` denote how many of those families of constraints correspond to runway and terminal constraints, respectively. `Duration range (min)` shows the shortest and longest time window of any capacity constraint in the instance. `Rolling period range (min)` shows the shortest and longest rolling period of any capacity constraint in the instance. Lastly, `Total constraints per day` show the number of individual capacity constraints that would result for these synthetic "capacity declarations" in any single day.
 
 | Instance | Constraint types | Runway constraints | Terminal constraints | Duration range (min) | Rolling period range (min) | Total constraints per day |
 |----------|------------------|--------------------|----------------------|----------------|----------------------|------------------------------|
